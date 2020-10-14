@@ -13,17 +13,17 @@ let s be your string.
 <code>
 
 var s = "I love %0, %1 and %2 for breakfast";
-console.log(s.str_replace(["banana","milk","honey"]));
+console.log(s.str_replace(["oat","milk","honey"]));
 
 // output
-"I love banana, milk and honey."
+"I love oat, milk and honey."
 
 // but you can put replacers in sorted order
 var s = "I love %2, %0 and %1 for breakfast";
 console.log(s.str_replace(["banana","milk","honey"]));
 
 // output2
-"I love honey, banana and milk for breakfast"
+"I love honey, oat and milk for breakfast"
 
 
 </code>
