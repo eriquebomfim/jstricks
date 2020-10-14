@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Javascript tricks for String</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+
+       /* Enhance your string replacement level */
+
+       String.prototype.str_replace = function(){
+
+            var _str, _replacers, _regex;
+
+            if (!arguments[0]){
+                console.error("No replacers array provided!");  
+                return;
+            }
+
+            _replacers  = arguments[0];
+            _regex = /(%[0-9]*)/;
+            _str   = this;
+            _currentReplacement = _str.match(_regex)[0].replace('%','');
+
+            if (_replacers.length < _str.match(_regex).length - 1){
+                console.error("Number of replacements not equal to replacers");
+                return;
+            }
+            _str   = _str.replace(_regex,_replacers[_currentReplacement]);
+
+            if (_regex.test(_str))
+                return _str.str_replace(_replacers);
+                        
+            return _str;
+       }
+
+       // ---------------------- USAGE ------------------------
+
+       replacers = ["grape","oath","honey"];    
+       myStr     = 'I love %0, %1 and %2 for breakfast';    
+       console.log( myStr.str_replace(replacers));
+
+       myStr     = 'I love %2, %0 and %1 for breakfast';    
+       console.log( myStr.str_replace(replacers));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
