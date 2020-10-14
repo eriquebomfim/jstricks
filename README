@@ -1,0 +1,7 @@
+JSTRICK
+
+A simple code to demonstrate how to improve your skills on string replacements
+using Javascript
+
+str_replace is a prototype function that can be attached to your application
+in order to improve your way to apply text replacements on strings
