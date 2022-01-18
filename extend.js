@@ -7,7 +7,7 @@
 * @root   <String> - the very root property
 */
 
-extend = function(target, ext, root = null){
+extend = function(target, ext){
     return Object.keys(target).reduce((rdx,curr)=>{ 
         if (ext[curr]){
             if (ext[curr].constructor.name == "Object"){ 
