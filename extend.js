@@ -4,7 +4,6 @@
 * or update property value from original object
 * @target <Object> - original object
 * @ext    <Object> - object to merge with
-* @root   <String> - the very root property
 */
 
 extend = function(target, ext){
